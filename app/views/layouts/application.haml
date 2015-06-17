@@ -7,15 +7,18 @@
     = csrf_meta_tags
     = stylesheet_link_tag 'application', media: 'all'
     = javascript_include_tag 'application'
+    /[if lt IE 8] %script(:src => '//cdnjs.cloudflare.com/ajax/libs/html5shiv/r29/html5.min.js')
 
   %body
-    %nav.navbar.navbar-default
-      .container-fluid
-        .navbar-header
-          %span.navbar-brand #{AppConfig.workshops_name}
-        %p.navbar-text.navbar-right
-          Links should go here
+    = render 'layouts/header'
     .container-fluid
       .row
         .col-lg-12
+          - if flash[:notice]
+            %div.alert.alert-info= flash[:notice]
+          - if flash[:alert]
+            %div.alert.alert-danger= flash[:alert]
+          - if flash[:error]
+            %div.alert.alert-danger= flash[:error] 
           = yield
+    = render 'layouts/footer'
