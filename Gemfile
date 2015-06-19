@@ -36,4 +36,7 @@ group :test do
   gem 'database_cleaner'
 end
 
+#Serve assets - heroku needs it!
+gem 'rails_12factor', group: :production
+
 ruby '2.1.5'
