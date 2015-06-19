@@ -1,1 +1,245 @@
 @import "bootstrap";
+
+/* colors */
+
+$papabear: #428BCA; /* normal */
+$mamabear: #A0D3FF; /* light */
+$babybear: #50697F; /* dark */
+$blank: white;
+$bigbadwolf: #999;
+
+/* universal */
+
+body {
+  padding-top: 60px;
+  color: $babybear;
+}
+
+section {
+  overflow: auto;
+}
+
+textarea {
+  resize: vertical;
+}
+
+.center {
+  text-align: center;
+  h1 {
+    margin-bottom: 10px;
+  }
+}
+
+/* typography */
+
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1;
+  color: $papabear;
+}
+
+h1 {
+  font-size: 2em;
+  letter-spacing: -2px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+h2 {
+  font-size: 1.5em;
+  letter-spacing: -1px;
+  margin-bottom: 10px;
+  text-align: left;
+  font-weight: normal;
+  color: $papabear;
+}
+
+h3 {
+  font-size: 1.125em;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+p {
+  font-size: 1.1em;
+  line-height: 1.7em;
+}
+
+a {
+  color: $papabear;
+}
+
+.table tbody tr td {
+  vertical-align: middle;
+}
+
+blockquote {
+  padding: 10px 40px;
+  p {
+    position: relative;
+    font-size: 0.8em;
+    &:before {
+      content: "\201C";
+      position: absolute;
+      top: 4px; left: -30px;
+      font-size: 60px;
+      color: $bigbadwolf;
+    }
+  }
+  footer {
+    padding-bottom: 0;
+    margin-top: 1em;
+    a {
+      color: $papabear;
+      &:hover {
+        color: $papabear;
+      }
+    }
+  }
+}
+
+/* header */
+
+#logo {
+  float: left;
+  margin-right: 10px;
+  font-size: 1.7em;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  padding-top: 9px;
+  a {
+    color: white;
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}
+
+.navbar-default {
+  background-color: $papabear;
+  border-bottom: none;
+  color: white;
+  .navbar-nav {
+    li {
+      a {
+        color: white;
+        &:hover {
+          font-weight: bold;
+          color: $blank;
+        }
+      }
+    }
+  }
+
+  .navbar-toggle {
+    border-color: $mamabear;
+    .icon-bar {
+      background-color: $mamabear;
+    }
+    &:hover {
+      background-color: $babybear;
+    }
+  }
+}
+
+.active {
+  font-weight: bold;
+}
+
+/* footer */
+
+footer {
+  margin-top: 45px;
+  padding-top: 5px;
+  padding-bottom: 30px;
+  border-top: 1px solid $gray-lighter;
+  color: $gray-light;
+  a {
+    color: $gray;
+    &:hover {
+      color: $gray-darker;
+    }
+  }
+  small {
+    float: left;
+  }
+  ul {
+    float: right;
+    list-style: none;
+    li {
+      float: left;
+      margin-left: 15px;
+    }
+  }
+}
+
+/* sidebar */
+
+aside {
+  section.user_info {
+    margin-top: 20px;
+  }
+  section {
+    padding: 10px 0;
+    margin-top: 20px;
+    &:first-child {
+      border: 0;
+      padding-top: 0;
+    }
+    span {
+      display: block;
+      margin-bottom: 3px;
+      line-height: 1;
+    }
+    h1 {
+      font-size: 1.4em;
+      text-align: left;
+      letter-spacing: -1px;
+      margin-bottom: 3px;
+      margin-top: 0px;
+    }
+  }
+}
+
+.gravatar {
+  float: left;
+  margin-right: 10px;
+}
+
+.gravatar_edit {
+  margin-top: 15px;
+}
+
+/* forms */
+
+input, textarea, select, .uneditable-input {
+  border: 1px solid $papabear;
+  margin-bottom: 15px;
+}
+
+input {
+  height: auto !important;
+}
+
+
+
+/* backgrounds */
+
+
+/* buttons */
+
+.btn {
+  margin-top:10px;
+}
+
+/* products */
+
+.price:after {
+  content: "$"
+}
+
+/* media queries */
+
+@media screen and (max-width: 500px) {
+    body { padding-top: 40px; }
+    #logo {font-size: 1.5em; margin:0;}
+}
