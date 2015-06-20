@@ -1,16 +1,22 @@
 %p#notice= notice
 .row
-  .col-md-8
+  .col-md-9
     %h1= category.name
 
-
-    %p
+    .row.text-center
       - category.products.each do |product|
-        = image_tag attachment_url(product, :product_image, :fill, 300, 300, format: "jpg")
-        %strong= product.title
-        = product.description
-        = product.price
-  .col-md-4
+        .col-md-3.hero-feature
+          .thumbnail
+            -if product.product_image
+              = image_tag attachment_url(product, :product_image, :fill, 300, 300, format: "jpg")
+            -else
+              = image_tag 'blank.jpg'
+          .caption
+            %h3= product.title
+            %p= product.description
+            %p.price= product.price
+            %p= link_to 'Check now!', category_product_path(product.category, product), class: 'btn btn-primary'
+  .col-md-3
     %p
       %h3 New product
       = render 'products/form'
