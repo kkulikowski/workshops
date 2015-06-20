@@ -20,7 +20,7 @@
             = image_tag 'blank.jpg', class: 'img-responsive'
       .col-md-3
         .caption-full
-          %h2= product.title
+          %h1= product.title
           %h3.price= product.price
     .row
       %h4 Description
@@ -31,7 +31,6 @@
       = render 'reviews/form'
 
       = render reviews
-
-    = link_to 'Edit', edit_category_product_path(category.id, product.id)
-    \|
+    - if user_signed_in?
+      = link_to 'Edit', edit_category_product_path(category.id, product.id), class: 'btn btn-warning'
     = link_to 'Back', category_products_path, class: 'btn btn-primary'

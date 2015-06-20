@@ -23,6 +23,6 @@
 
 
 .row
-  = link_to 'Edit', edit_category_path(category)
-  \|
+  - if user_signed_in?
+    = link_to 'Edit', edit_category_path(category), class: 'btn-warning'
   = link_to 'Back', categories_path, class: 'btn btn-primary'
