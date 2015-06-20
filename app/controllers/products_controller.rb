@@ -54,7 +54,8 @@ class ProductsController < ApplicationController
       product.destroy
       redirect_to category_url(product.category), notice: 'Product was successfully destroyed.'
     else
-      render action: 'edit', error: 'You are not allowed to destroy this product.'
+      redirect_to category_product_url(category, product)
+      flash[:error] = 'You are not allowed to destroy this product.'
     end
   end
 

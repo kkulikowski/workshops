@@ -1,20 +1,20 @@
-%h1 Listing categories
-
-%table.table
-  %tr
-    %th Name
-    %th
-    %th
-    %th
-
+%h1 Categories
+.row
   - categories.each do |category|
-    %tr
-      %td= category.name
-      %td= link_to 'Show', category
-      - if user_signed_in?
-        %td= link_to 'Edit', edit_category_path(category)
-        %td= link_to 'Destroy', category, method: :delete, data: { confirm: 'Are you sure?' }
+    .col-md-3.hero-feature
+      .thumbnail
+        =link_to category do
+          -if category.category_image
+            = image_tag attachment_url(category, :category_image, :fill, 300, 300, format: "jpg")
+          -else
+            = image_tag 'blank.jpg'
+        .caption.center
+          %h3
+            =category.name << "(#{category.products.count})"
+          -if user_signed_in? && current_user.admin?
+            %p= link_to 'Edit', edit_category_path(category), class: 'btn btn-warning'
+            %p= link_to 'Destroy', category, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger'
 
 %br
 -if user_signed_in? && current_user.admin?
-  = link_to 'New Category', new_category_path
+  = link_to 'New Category', new_category_path, class: 'btn btn-primary'
