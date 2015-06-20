@@ -1,3 +1,10 @@
+#Hello!
+
+This is my app for workshops in Krakow.
+You can find it on [Heroku](http://cryptic-lowlands-7413.herokuapp.com/)
+
+___
+
 # Workshops application
 
 Hi! We think it’s great that you want to **join along with Netguru** to start learning **Ruby on Rails**. Taking part in workshops is also a **great opportunity to start an internship** with us and become one of the Netguru folks. Since you have just taken your first step on your adventure with programming in RoR, we challenge you to complete the following task. **Ready, steady…Go!**

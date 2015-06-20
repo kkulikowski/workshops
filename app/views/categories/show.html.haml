@@ -1,18 +1,22 @@
 %p#notice= notice
+.row
+  .col-md-8
+    %h1= category.name
 
-%p
-  %b Category:
-  = category.name
-%p
-  %h3 New product
-  = render 'products/form'
 
-%p
-  - category.products.each do |product|
-    %strong= product.title
-    = product.description
-    = product.price
+    %p
+      - category.products.each do |product|
+        = image_tag attachment_url(product, :product_image, :fill, 300, 300, format: "jpg")
+        %strong= product.title
+        = product.description
+        = product.price
+  .col-md-4
+    %p
+      %h3 New product
+      = render 'products/form'
 
-= link_to 'Edit', edit_category_path(category)
-\|
-= link_to 'Back', categories_path, class: 'btn btn-primary'
+
+.row
+  = link_to 'Edit', edit_category_path(category)
+  \|
+  = link_to 'Back', categories_path, class: 'btn btn-primary'

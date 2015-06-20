@@ -20,6 +20,8 @@ gem 'travis'
 gem 'ffaker'
 gem 'konf'
 gem 'gravtastic'
+gem "refile", require: "refile/rails"
+gem "refile-mini_magick"
 
 group :development do
   gem 'spring'

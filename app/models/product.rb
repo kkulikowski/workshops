@@ -3,6 +3,8 @@ class Product < ActiveRecord::Base
   belongs_to :user
   has_many :reviews, dependent: :destroy
 
+  attachment :product_image
+
   validates_presence_of :title, :description, :price
   validates_format_of :price, :with => /\A\d+(?:\.\d{0,2})?\z/
 

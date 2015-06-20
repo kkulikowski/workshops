@@ -1,6 +1,7 @@
 %p#notice= notice
 %p#error= flash[:error]
 
+%p= image_tag attachment_url(product, :product_image, :fill, 300, 300, format: "jpg")
 %p
   %b Title:
   = product.title

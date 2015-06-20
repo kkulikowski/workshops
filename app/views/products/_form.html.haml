@@ -10,6 +10,9 @@
     = f.label :title
     = f.text_field :title, class: 'form-control'
   .form-group
+    = f.label :product_image
+    = f.attachment_field :product_image, class: 'form-control'
+  .form-group
     = f.label :description
     = f.text_area :description, class: 'form-control'
   .form-group
