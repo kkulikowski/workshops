@@ -2,16 +2,19 @@
 
 /* colors */
 
-$papabear: #428BCA; /* normal */
-$mamabear: #A0D3FF; /* light */
-$babybear: #50697F; /* dark */
-$blank: white;
+$papabear: rgba(34, 34, 34, 0.9); /* normal */
+$mamabear: rgba(34, 34, 34, 0.7); /* light */
+$babybear: rgba(34, 34, 34, 1); /* dark */
+$blank: #fff;
 $bigbadwolf: #999;
+$some-pixels-small: 10px;
+$some-pixels-medium: 20px;
+$some-pixels-large: 40px;
 
 /* universal */
 
 body {
-  padding-top: 60px;
+  padding-top: 49px;
   color: $babybear;
 }
 
@@ -73,7 +76,8 @@ a {
 }
 
 blockquote {
-  padding: 10px 40px;
+  padding: $some-pixels-medium;
+  border: none;
   p {
     position: relative;
     font-size: 0.8em;
@@ -82,18 +86,15 @@ blockquote {
       position: absolute;
       top: 4px; left: -30px;
       font-size: 60px;
-      color: $bigbadwolf;
+      color: $papabear;
     }
   }
   footer {
     padding-bottom: 0;
     margin-top: 1em;
-    a {
-      color: $papabear;
-      &:hover {
-        color: $papabear;
-      }
-    }
+    color: $papabear;
+    font-size: 1em;
+    border-top: 1px solid $papabear;
   }
 }
 
@@ -107,7 +108,7 @@ blockquote {
   letter-spacing: -1px;
   padding-top: 9px;
   a {
-    color: white;
+    color: $blank;
     &:hover {
       text-decoration: none;
     }
@@ -117,11 +118,11 @@ blockquote {
 .navbar-default {
   background-color: $papabear;
   border-bottom: none;
-  color: white;
+  color: $blank;
   .navbar-nav {
     li {
       a {
-        color: white;
+        color: $blank;
         &:hover {
           font-weight: bold;
           color: $blank;
@@ -220,6 +221,11 @@ input {
   height: auto !important;
 }
 
+.form-control {
+  background-color: rgba(234, 234, 234, 0.3);
+  border: 1px solid $babybear;
+}
+
 
 
 /* backgrounds */
@@ -229,6 +235,37 @@ input {
 
 .btn {
   margin-top:10px;
+  border-radius: 2px;
+  padding: 10px 39px;
+  font-size: 12px;
+  border: medium none;
+  box-sizing: border-box;
+  color: $blank;
+  background: rgba(34, 34, 34, 0.9) none repeat scroll 0% 0%;
+  transition: all 0.2s cubic-bezier(0, 0, 0.58, 1) 0s;
+}
+
+.btn-default {
+  &:hover{
+    background: rgba(34, 34, 34, 1) none repeat scroll 0% 0%;
+    color: $blank;
+  }
+}
+
+.btn-primary {
+
+}
+
+.btn-success {
+
+}
+
+.btn-warning {
+
+}
+
+.btn-danger {
+
 }
 
 /* products */
@@ -237,10 +274,6 @@ input {
   content: "$"
 }
 
-/* categories */
-.thumbnail:hover{
-  border: 1px solid $babybear;
-}
 
 
 /* media queries */
@@ -248,4 +281,89 @@ input {
 @media screen and (max-width: 500px) {
     body { padding-top: 40px; }
     #logo {font-size: 1.5em; margin:0;}
+}
+
+.full-screen {
+  position: fixed; 
+  top: 0; 
+  left: 0; 
+  
+  /* Preserve aspet ratio */
+  min-width: 100%;
+  min-height: 100%;
+}
+
+.light-box {
+  background: rgba(34, 34, 34, 0.3);
+  color: $blank;
+  padding: $some-pixels-medium;
+  margin-top: $some-pixels-medium;
+  &h1, h2, h3 {
+    color: $blank;
+  }
+  a {
+    color: $blank;
+    &:hover{
+      color: $blank;
+    }
+  }
+  .help-block {
+    color: $blank;
+  }
+}
+
+.dark-box {
+  background: rgba(234, 234, 234, 0.3);
+  color: $papabear;
+  padding: $some-pixels-medium;
+  margin-top: $some-pixels-medium;
+  &h1, h2, h3 {
+    color: $papabear;
+  }
+  a {
+    color: $papabear;
+    &:hover{
+      color: $papabear;
+    }
+  }
+  .help-block {
+    color: $blank;
+  }
+}
+
+/* devise */
+.devise-bg {
+  background: url(road.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+
+/* Users */
+
+.user-bg {
+  background: url(people.jpeg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+/* Categories */
+.main-bg {
+  background: url(main.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.thumbnail {
+  background: rgba(34, 34, 34, 0.1);
+  border: none;
+  &:hover {
+    background: rgba(34, 34, 34, 0.3);
+  }
 }

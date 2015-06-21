@@ -1,37 +1,37 @@
-%p#notice= notice
-%p#error= flash[:error]
-
-.row
-  .col-md-3
-    %p.lead 
-      All products in
-      %strong= @category.name
-    .list-group
-    - @products.each do |product|
-      =link_to product.title, category_product_path(category,product), class: 'list-group-item'
-
-  .col-md-9
+.container-fluid.main-bg.full-screen
+.container
+  .col-md-12.no-box
     .row
-      .col-md-6
-        .thumbnail
-          -if product.product_image
-            = image_tag attachment_url(product, :product_image, :fill, 300, 300, format: "jpg"), class: 'img-responsive'
-          -else
-            = image_tag 'blank.jpg', class: 'img-responsive'
       .col-md-3
-        .caption-full
-          %h1= product.title
-          %h3.price= product.price
-    .row
-      %h4 Description
-      %p= product.description
-    
-    .row
-      %h3 Reviews
-      = render 'reviews/form'
+        %p.lead 
+          All products in
+          %strong= @category.name
+        .list-group
+        - @products.each do |product|
+          =link_to product.title, category_product_path(category,product), class: 'list-group-item'
 
-      = render reviews
-    - if user_signed_in?
-      = link_to 'Edit', edit_category_product_path(category.id, product.id), class: 'btn btn-warning'
-      = link_to 'Destroy', category_product_path(product.category, product), method: :delete, data: { confirm: 'Are you sure?' },class: 'btn btn-danger'
-    = link_to 'Back', category_products_path, class: 'btn btn-primary'
+      .col-md-9
+        .row
+          .col-md-6
+            .thumbnail
+              -if product.product_image
+                = image_tag attachment_url(product, :product_image, :fill, 300, 300, format: "jpg"), class: 'img-responsive'
+              -else
+                = image_tag 'blank.jpg', class: 'img-responsive'
+          .col-md-3
+            .caption-full
+              %h1= product.title
+              %h3.price= product.price
+        .row
+          %h4 Description
+          %p= product.description
+        
+        .row.dark-box
+          %h3 Reviews
+          = render 'reviews/form'
+        .dark-box
+          = render reviews
+        - if user_signed_in?
+          = link_to 'Edit', edit_category_product_path(category.id, product.id), class: 'btn btn-warning'
+          = link_to 'Destroy', category_product_path(product.category, product), method: :delete, data: { confirm: 'Are you sure?' },class: 'btn btn-danger'
+        = link_to 'Back', category_path, class: 'btn btn-primary'

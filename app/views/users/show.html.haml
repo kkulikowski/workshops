@@ -1,37 +1,47 @@
-.center
-  %h1
-    Hello
-    = current_user.firstname
-  = image_tag current_user.gravatar_url
-.container
-  .row
-    .col-md-3
-      %h3 About
-      %em.small
-        = mail_to @user.email, @user.email
-      Created at
-      = @user.created_at.strftime("%Y-%m-%d %H:%M:%S")
-      Last sign in
-      = @user.last_sign_in_at.strftime("%Y-%m-%d %H:%M:%S")
-      Sing in ip
-      = @user.current_sign_in_ip
-      Reviews
-      = @user.reviews.count
-    .col-md-6
-      %h3 Last reviews
-      %table.table.table-striped
-        %thead
-          %tr
-            %th Date
-            %th Content
-            %th Rating
-        %tbody
-          - Review.where(user_id: @user.id).last(5).reverse.each do |review|
-            %tr
-              %td= review.created_at.strftime('%d-%m-%Y')
-              %td= review.content
-              %td= review.rating
-    .col-md-3
-      %h3 Account settings
-      %p= link_to 'Change your data', edit_user_registration_path
-      %p= link_to 'Change your gravatar', 'http://gravatar.com'
+.container-fluid.user-bg.full-screen
+.cointainer
+  .col-md-12.dark-box
+    .center
+      %h1
+        Hello
+        = current_user.firstname
+      = image_tag current_user.gravatar_url
+    .container
+      .row
+        .col-md-3
+          %h2 
+            About
+            =@user.firstname
+            =@user.lastname
+          %em.small
+            = mail_to @user.email, @user.email
+          %br
+          %strong Created at:
+          = @user.created_at.strftime("%Y-%m-%d %H:%M:%S")
+          %br
+          %strong Last sign in:
+          = @user.last_sign_in_at.strftime("%Y-%m-%d %H:%M:%S")
+          %br
+          %strong Sing in ip:
+          = @user.current_sign_in_ip
+          %br
+          %strong Reviews:
+          = @user.reviews.count
+        .col-md-6
+          %h2 Last reviews
+          %table.table
+            %thead
+              %tr
+                %th Date
+                %th Content
+                %th Rating
+            %tbody
+              - Review.where(user_id: @user.id).last(5).reverse.each do |review|
+                %tr
+                  %td= review.created_at.strftime('%d-%m-%Y')
+                  %td= review.content
+                  %td= review.rating
+        .col-md-3
+          %h2 Account settings
+          %p= link_to 'Change your data', edit_user_registration_path, class: 'btn btn-primary'
+          %p= link_to 'Change your gravatar', 'http://gravatar.com', class: 'btn btn-primary'
