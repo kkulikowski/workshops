@@ -224,6 +224,7 @@ input {
 .form-control {
   background-color: rgba(234, 234, 234, 0.3);
   border: 1px solid $babybear;
+  color: $papabear;
 }
 
 
@@ -334,26 +335,6 @@ input {
 /* devise */
 .devise-bg {
   background: url(road.jpg) no-repeat center center fixed; 
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-}
-
-
-/* Users */
-
-.user-bg {
-  background: url(people.jpeg) no-repeat center center fixed; 
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-}
-
-/* Categories */
-.main-bg {
-  background: url(main.jpg) no-repeat center center fixed; 
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
