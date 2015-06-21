@@ -2,6 +2,8 @@
 
 This is my app for workshops in Krakow.
 You can find it on [Heroku](http://cryptic-lowlands-7413.herokuapp.com/)
+Uploading pictures works on local server, but i am not allowed to upload stuff to Heroku as you know.
+Regards
 
 ___
 
