@@ -14,7 +14,7 @@ $some-pixels-large: 40px;
 /* universal */
 
 body {
-  padding-top: 49px;
+  padding-top: 60px;
   color: $babybear;
 }
 
@@ -294,6 +294,7 @@ input {
   min-height: 100%;
 }
 
+/* useless for now * /
 .light-box {
   background: rgba(34, 34, 34, 0.3);
   color: $blank;
@@ -331,6 +332,7 @@ input {
     color: $blank;
   }
 }
+/**/
 
 /* devise */
 .devise-bg {
